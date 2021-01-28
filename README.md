@@ -26,12 +26,12 @@ The keytool command might not be in your path—it’s part of Java, which is in
 The -storetype JKS tag is only required for Java 9 or newer. As of the Java 9 release, the keystore type defaults to PKS12.
 
 ### Create key.properties
-Create a file named key.properties int he following location.
+Create a file named key.properties in the following location.
 ```
 \android\
 ```
 
-save the following the key.properties file
+save the following to the key.properties file
 
 ```
 storePassword=<password from previous step>
@@ -81,10 +81,14 @@ location:
 ```
 /android/app/src/main 
 ```
-Thing to review :
+Thing to review :  
+
 1.android:label="app_name_to_be_displayed"
+
 2.android:icon="@mipmap/ic_launcher">
+
 3.package="com.cobble.package_name">
+
 
 Add required permissions:
 For Internet add :
