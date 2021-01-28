@@ -39,3 +39,71 @@ keyPassword=<password from previous step>
 keyAlias=key
 storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
 ```
+
+## Configure App level build.gradle
+Add code before android block in the file:
+```
+\android\app\build.gradle
+```
+With the keystore information from your properties file
+
+```
+   def keystoreProperties = new Properties()
+   def keystorePropertiesFile = rootProject.file('key.properties')
+   if (keystorePropertiesFile.exists()) {
+       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   }
+
+   android {
+         ...
+   }
+```
+Add code before buildTypes block:
+```
+   signingConfigs {
+       release {
+           keyAlias keystoreProperties['keyAlias']
+           keyPassword keystoreProperties['keyPassword']
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+           storePassword keystoreProperties['storePassword']
+       }
+   }
+   buildTypes {
+       release {
+           signingConfig signingConfigs.release
+       }
+   }
+```
+
+## Review AndroidManifest.xml
+
+location:
+```
+/android/app/src/main 
+```
+Thing to review :
+1.android:label="app_name_to_be_displayed"
+2.android:icon="@mipmap/ic_launcher">
+3.package="com.cobble.package_name">
+
+Add required permissions:
+For Internet add :
+```
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+## Building the app
+
+First buidinf run following commands
+```
+flutter pub get
+flutter clean
+```
+Build apk using 
+```
+flutter build apk --split-per-abi
+```
+Build app bundle (Recommended for Play Store)
+```
+flutter build appbundle
+```
