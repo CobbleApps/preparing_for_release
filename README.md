@@ -9,7 +9,8 @@ You can create icon resources using
 
 Download the zipped file and unzip this to 
 ```
-\android\app\src\main\res\
+cd \android\app\src\main\res\
+start .
 ```
 
 ## Signing the app
@@ -79,7 +80,8 @@ Add code before buildTypes block:
 
 location:
 ```
-/android/app/src/main 
+cd \android\app\src\main\ 
+start . 
 ```
 Thing to review :  
 
@@ -91,6 +93,7 @@ Thing to review :
 
 
 Add required permissions:
+
 For Internet add :
 ```
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -110,4 +113,9 @@ flutter build apk --split-per-abi
 Build app bundle (Recommended for Play Store)
 ```
 flutter build appbundle
+```
+Once built files are saved at :
+```
+cd build\app\outputs\bundle\release\ 
+start .
 ```
