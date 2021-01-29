@@ -94,9 +94,11 @@ Thing to review :
 
 Add required permissions:
 
-For Internet add :
 ```
 <uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
 ```
 
 ## Building the app
