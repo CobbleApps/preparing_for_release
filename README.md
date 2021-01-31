@@ -12,7 +12,30 @@ Download the zipped file and unzip this to
 cd \android\app\src\main\res\
 start .
 ```
+## Adding Launch Screen
+Make a file named color.xml in the following folder
+```
+cd \android\app\src\main\res\values
+start .
+```
+Add the following code(Updating your backgrounf color)
+```
+<?xml version="1.0" encoding="utf-8"?>
 
+<resource>
+    <color name="launch_background_color">
+        #303030
+    </color>
+</resource>
+```
+Save your app logo in the following file
+```
+cd \android\app\src\main\res\drawable
+start .
+```
+Update the drawable with the following code
+```
+```
 ## Signing the app
 
 Create keystore by running following command
