@@ -18,7 +18,7 @@ Make a file named color.xml in the following folder
 cd \android\app\src\main\res\values
 start .
 ```
-Add the following code(Updating your backgrounf color)
+Add the following code(Updating the backgroung color)
 ```
 <?xml version="1.0" encoding="utf-8"?>
 
@@ -35,6 +35,22 @@ start .
 ```
 Update the drawable with the following code
 ```
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Modify this file to customize your launch splash screen -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/launch_background_color" />
+
+    <!-- You can insert your own image assets here -->
+    <item>
+        android:left="50dp"
+        android:right="50dp">
+
+        <bitmap
+            android:gravity="center"
+            android:width="100dp"
+            android:src="@drawable/logo" />
+    </item>
+</layer-list>
 ```
 ## Signing the app
 
