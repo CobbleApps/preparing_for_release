@@ -144,3 +144,12 @@ Once built files are saved at :
 cd build\app\outputs\bundle\release\ 
 start .
 ```
+## When adding update 
+When uploading a new updated version of the application change the pubspec.yaml file version number.
+
+And increment the count as follows.
+
+```
+version: 1.0.1+2
+#Earlier it was 1.0.0+1
+```
